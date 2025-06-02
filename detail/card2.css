@@ -1,0 +1,128 @@
+
+ div.business-card2 {
+	 height: 427px;
+	 width: 320px;
+	 margin-left: -160px;
+	 margin-top: -95px;
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 perspective: 1000;
+}
+ div.business-card2:hover .flipper2, div.business-card2.hover .flipper2 {
+	 transform: rotateY(180deg) rotateZ(90deg);
+}
+ div.flipper2 {
+	 transition: 0.6s;
+	 transform-style: preserve-3d;
+	 position: relative;
+	 transform-origin: center 160px;
+}
+ div.front2, div.back2 {
+	 backface-visibility: hidden;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 height: 427px;
+	 width: 320px;
+	 box-shadow: 0 0 50px rgba(0, 0, 0, 0.75);
+}
+ div.front2 {
+	 background-color: rgb(255, 255, 255);
+	 z-index: 0;
+}
+ div.front2:before, div.front2:after {
+	 display:block;
+	 background-image: url("./img/2.png");
+	 background-repeat: no-repeat;
+	 background-position: 0px;
+	 background-position-x: -148px;
+	 content: '';
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 border-width: 160px;
+	 border-style: solid;
+	 border-color: transparent;
+}
+
+ div.front2 div.name2 {
+	 position: absolute;
+	 bottom: 8.5px;
+	 left: 85px;
+}
+ div.front2 div.name2 span {
+	 display: block;
+	 font-size: 40px;
+	 line-height: 45px;
+}
+ div.front2 div.name2 span.first2 {
+	 color: #005d8c;
+}
+ div.front2 div.name2 span.last2 {
+	 color: #288fbd;
+}
+ div.front2 div.name2 span.title2 {
+	 font-size: 20px;
+	 line-height: 20px;
+}
+ div.back2 {
+	 background-color: #005d8c;
+	 color: white;
+	 width: 427px;
+	 height: 320px;
+	 box-sizing: border-box;
+	 transform: rotateY(180deg) rotateZ(90deg);
+}
+ div.back2 div.container-sm2 {
+	 float: left;
+	 width: 40%;
+	 height: 100%;
+	 position: relative;
+}
+ div.back2 div.container-lg2 {
+	 float: left;
+	 width: 60%;
+	 margin-top: 2rem;
+}
+ div.back2 figure.logo-white2 {
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 width: 120px;
+	 height: 120px;
+	 display: block;
+	 margin: -60px -60px;
+}
+ div.back2 figure.logo-white2:before, div.back2 figure.logo-white2:after {
+	 display: block;
+	 content: '';
+	 position: absolute;
+	 border-style: solid;
+	 border-color: transparent;
+}
+ div.back2 figure.logo-white2:before  {
+	 top: 0;
+	 left: 0;
+	 border-width: 60px;
+	 background-image: url("./img/yzu logo small.png");
+	 background-repeat: no-repeat;
+     background-position: -60px;
+	 z-index: 2;
+}
+
+ div.back2 a {
+	 color: white;
+	 text-decoration: none;
+	 display: block;
+}
+
+ div.back2 ul.social2 {
+	 font-size: 1.25rem;
+}
+ div.back2 ul.social2 li {
+	 margin-top: 1rem;
+}
+ div.back2 ul.social2 li:first-child {
+	 margin-top: 2rem;
+}

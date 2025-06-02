@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="carousel.css" >
+    <link rel="stylesheet" href="toggle.css">
+    <link rel="stylesheet" href="sakura.min.css">
+    <link rel='stylesheet' href='./bg.scss'>
+    
+    <title>Websites</title>
+    <style>        
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            box-sizing: border-box;
+            /* border:solid magenta 1px; */
+        }
+
+        html{
+            background-image: url("https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-0.3.5&s=e20bc3d490c974d9ea190e05c47962f5&auto=format&fit=crop&w=634&q=80");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        
+        .yeargallery{
+            text-shadow: 2px 2px #070707;
+            
+        }
+        .important{
+            text-shadow: 2px 2px #070707;
+        }
+           
+        .headerimage{
+            position:relative;
+            z-index:1;
+            cursor: pointer;
+        }
+        .headeritem1{
+            display: grid;
+            background-color: #484848;
+            height:90px;
+            z-index: 1;
+            box-shadow: inset 0px 0px 10px 5px rgba(0,0,0,6);
+        }
+
+        .headerlogo{
+            text-align: center;
+            position:absolute;
+            top: 100px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: black solid 2px;
+            background-color: #6e6e6e;
+            border-radius:100px;
+            z-index: 1;
+            box-shadow:0px 0px 8px 3px #000000;
+        }
+
+        .headerlogo2{
+            /* position:relative; */
+            z-index: 1;
+            
+        }
+        
+
+        .header img{
+            border: black solid 2px;
+            background-color: #6e6e6e;
+            border-radius:100px;
+            scale:60%;
+            
+        }
+
+        .headeritem2{
+            background-color: #343434;
+            height:10px;
+            box-shadow:0px 0px 8px 3px #000000 inset;
+        }
+        .headeritem3{
+            /* display: grid; */
+            background-color: #484848;
+            /* grid-template-columns: auto auto; */
+            color: aliceblue;
+            height:60px;
+            font-size: xx-large;
+            box-shadow:0px 0px 8px 0px #000000 inset;
+        }
+        .news{
+            
+            border: 1px solid red;
+            border-radius: 20px;
+            text-align: center;
+            margin: 15px;
+            padding: 100px;
+        }
+
+        /* 隨機歌曲底部白框; */
+        #songContainer {
+            margin:0 auto;
+            display:flex;
+            justify-content: space-between;
+            width: auto;
+            max-width: 1450px;
+            height: 300px;            
+            background-color: #fefefe;
+            border-radius: 8px;
+            box-shadow: 1px 2px 10px 5px rgba(0, 0, 0, 0.4);
+            margin-top:200px;
+            margin-bottom:150px;
+        }
+
+        .song {
+            width: 25%;
+            height: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            padding: 20px;
+            transition-duration: .4s;
+        }
+
+        .song img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .song:hover{
+            transform: scale(1.1);
+        }
+
+        .randommusictitle{
+            position: relative;
+            left:50%;
+            width: 150px;
+            height:30px;
+            top:230px;
+            text-align: center;
+            background-color:#5b4242 ;
+            color: #FFFFFF;
+            z-index: 1;
+            transform: translate(-50%, -50%);
+            border-radius: 9px;
+            border: #000000 2px solid;
+            box-shadow: 1px 2px 10px 5px rgba(0, 0, 0, 0.4);
+        }
+
+
+        .news_container {
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: auto;
+            max-width: 1450px;
+            height: 280px;            
+            background-color: #fefefe;
+            border-radius: 1em;
+            box-shadow: 1px 2px 10px 5px rgba(0, 0, 0, 0.4);
+            margin-top:50px;
+        }
+        .item {
+            display: flex;
+            height: 40px;
+            flex-wrap: wrap;
+            flex-direction: row;
+            background-color: transparent;
+        }
+
+
+        .item1 {
+            width: 100%;            
+            font-size: 25px;
+            position: relative;
+            left:30px;
+            top: 5px;
+            
+        }
+        .item2 {
+            width: 85%;
+        }
+        .item2-2 {
+            width: 15%;
+            color: #9b8788;
+            position: relative;
+            top: 5px;
+            
+        }
+        a:link {
+            text-decoration: none;
+            color: #9b8788;
+        }
+        a:active{
+            text-decoration:blink;
+        }
+        a{
+            position: relative;
+            transition: .3s;
+        }
+
+        a:hover{
+            transform: scale(1.05);
+        }
+
+        a:visited{
+            text-decoration:none;
+            color: #9b8788;
+        }
+
+        .migi{
+            left:30px;
+        }
+
+
+        footer {
+        width:100%;
+        position:relative;
+        
+        }
+        footer div {
+        position:relative;
+        background-color:#343434;
+        bottom: -0px;
+        margin: -50px 0px 0px 0px;
+        padding:0px;
+        color: #fff;
+        text-align:center;
+        font-size: xx-large;
+        font-family: "微軟正黑體";
+        text-shadow: 3px 3px #070707;
+        
+        }
+        footer .bg{
+            height: 50px;
+            width: 600px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        svg {
+        width:100%;
+        }
+        .arrow {
+        stroke-width: .3px;
+        stroke:rgb(255, 255, 255);
+        }
+        #topball {
+        animation: ball 1.5s ease-in-out;
+        animation-iteration-count:infinite;
+        animation-direction: alternate;
+        animation-delay: 0.3s;
+        cursor:pointer;
+        }
+
+        .wave {
+        animation: wave 3s linear;
+        animation-iteration-count:infinite;
+        fill: #343434;
+        }
+        .drop {
+        fill: transparent;
+        animation: drop 5s ease infinite normal;
+        stroke: #343434;
+        stroke-width:0.5;
+        opacity:.6; 
+        transform: translateY(80%);
+        }
+        .drop1 {
+        transform-origin: 20px 3px;
+        }
+        .drop2 {
+        animation-delay: 3s;
+        animation-duration:3s;
+        transform-origin: 25px 3px;
+        }
+        .drop3 {
+        animation-delay: -2s;
+        animation-duration:3.4s;
+        transform-origin: 16px 3px;
+        }
+        .gooeff {
+            filter: url(#goo);
+        }
+        #wave2 {
+        animation-duration:5s;
+        animation-direction: reverse;
+        opacity: .6
+        }
+        #wave3 {
+        animation-duration: 7s;
+        opacity:.3;
+        }
+        @keyframes drop {
+        0% {
+            transform: translateY(80%); 
+            opacity:.6; 
+        }
+        80% {
+            transform: translateY(80%); 
+            opacity:.6; 
+        }
+        90% { 
+            transform: translateY(10%) ; 
+            opacity:.6; 
+        }
+        100% { 
+            transform: translateY(0%) scale(1.5);  
+            stroke-width:0.2;
+            opacity:0; 
+        }
+        }
+        @keyframes wave {
+        to {transform: translateX(-100%);}
+        }
+        @keyframes ball {
+        to {transform: translateY(20%);}
+        }
+
+        .inner li {
+            position:relative;
+            text-align: center;
+        }
+
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 100%;
+        }
+        
+        ul.drop-down-menu {
+            /* font-size: 13px; */
+            font-size: xx-large;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            
+        }
+
+        ul.drop-down-menu > li {
+            flex: 1;
+            position: relative;
+        }
+
+        ul.drop-down-menu a {
+            background-color: transparent;
+            color: #FFFFFF;
+            text-shadow: 2px 2px #070707;
+            display: block;
+            padding: 0 30px;
+            text-decoration: none;
+            line-height: 60px;
+        }
+
+        ul.drop-down-menu a:hover {
+            background-color: rgba(0, 0, 0, 0.664);
+            font-size: xx-large;
+            color: #fff;
+        }
+
+        ul.drop-down-menu li:hover > a {
+            /* background-color: #ef5c28; */
+            color: #fff;
+        }
+
+        ul.drop-down-menu ul {
+            display: none;
+            position: absolute;
+            z-index: 99;
+            left: 0;
+            top: 100%;
+            min-width: 180px;
+        }
+
+        ul.drop-down-menu li:hover > ul {
+            display: block;
+        }
+
+        ul.drop-down-menu ul li {
+            border-bottom: #ccc 1px solid;
+            position: relative;
+        }
+
+        ul.drop-down-menu ul li:hover > ul {
+            display: block;
+        }
+
+        ul.drop-down-menu ul ul {
+            left: 100%;
+            top: 0;
+        }
+
+        /* 新增样式 */
+        ul.drop-down-menu ul li {
+            display: inline-block;
+            width: 30%;
+            
+            border: none;
+        }
+
+        ul.drop-down-menu ul ul {
+            top: 0;
+            left: 100%;
+        }
+
+        /* 修改数字选项区块的宽度 */
+        ul.drop-down-menu ul {
+            width: 600px; /* 设置数字选项区块的宽度 */
+        }
+
+        ul.drop-down-menu ul li a {
+            width: 100%;
+            padding: 0 10px;
+        }
+        .year{
+            background-color: #484848b6;
+            font-size: 20px;
+            box-shadow:4px 0px 8px 2px #000000;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="headerlogo">
+        <div class="headerlogo2">
+                <div class="headerimage">
+                    <a href="./index.html">
+                    <img src="./img/Logo.png" width="200px" height="200px" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            
+            <div class="headeritem1">
+
+                <div id="navArea">
+                <nav>
+                    <div class="inner">
+                        <ul>
+                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="./detail/detail.html">Detail</a></li>
+                    </div>
+                </nav>
+
+                <div class="toggle-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id="mask"></div>
+            </div>
+
+        </div>
+
+            <div class="headeritem2"></div>
+
+            <div class="headeritem3">
+                <ul class="drop-down-menu">
+                    <li ><a href="#">Year gallery</a>
+                        <ul class="year">
+                            <li><a href="./2023.html">2023</a></li>
+                            <li><a href="./2022.html">2022</a></li>
+                            <li><a href="./2021.html">2021</a></li>
+                            <li><a href="./2020.html">2020</a></li>
+                            <li><a href="./2019.html">2019</a></li>
+                            <li><a href="./2018.html">2018</a></li>
+                            <li><a href="./2017.html">2017</a></li>
+                            <li><a href="./2016.html">2016</a></li>
+                            <li><a href="./2015.html">2015</a></li>
+                            <li><a href="./2014.html">2014</a></li>
+                            <li><a href="./2013.html">2013</a></li>
+                            <li><a href="./2012.html">2012</a></li>
+                            <li><a href="./2011.html">2011</a></li>
+                            <li><a href="./2010.html">2010</a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./intro.html">歌手介紹</a></li>
+                </ul>
+            </div>
+        <script src="./toggle.js"></script>
+    </div>
+
+
+           <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="5000">
+                <a href="https://www.youtube.com/watch?v=2eOg5DoYuwU" target="_blank">
+                    <img src="./img/HomePage Banner/Fightsong.jpg" class="d-block w-100" alt="...">
+                </a>
+                <div class="hot">HOT</div>
+                <div class="carousel-caption">
+                    Eve ファイト・ソング
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <a href="https://youtu.be/bjYG08Cdix4" target="_blank">
+                    <img src="./img/HomePage Banner/Natori.jpg" class="d-block w-100" alt="...">
+                </a>
+                <div class="hot">HOT</div>
+                <div class="carousel-caption">                            
+                    なとり - 猿芝居
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <a href="https://www.youtube.com/watch?v=ZRtdQ81jPUQ" target="_blank">
+                    <img src="./img/HomePage Banner/idol.jpg" class="d-block w-100" alt="...">
+                </a>
+                <div class="hot">HOT</div>
+                <div class="carousel-caption">                            
+                    YOASOBI「アイドル」
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <a href="https://www.youtube.com/watch?v=kzZ6KXDM1RI" target="_blank">
+                    <img src="./img/HomePage Banner/Dryflower.jpg" class="d-block w-100" alt="...">
+                </a>
+                <div class="hot">HOT</div>
+                <div class="carousel-caption">                            
+                    優里『ドライフラワー』
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <a href="https://www.youtube.com/watch?v=hm1na9R2uYA" target="_blank">
+                    <img src="./img/HomePage Banner/Kingnu.jpg" class="d-block w-100" alt="...">
+                </a>
+                <div class="hot">HOT</div>
+                <div class="carousel-caption">                            
+                    King Gnu 一途
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true">&#10094;</span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true">&#10095;</span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+    </div>
+    <script src="./carousel.js"></script>
+        </div>
+        
+        <div class="news_container">
+            <div class="item item1">News</div>
+            
+                <div class="item item2"><a class="migi" href="https://ynews.page.link/8Dgqb" target="_blank">Jpop現場直擊／GARNiDELiA睽違四年再登台 美依禮芽嗨唱浪姐4金曲</a></div>
+                <div class="item item2-2">2023年05月21日</div>
+            
+                <div class="item item2"><a class="migi" href="https://game.ettoday.net/article/2501583.htm" target="_blank">《我推的孩子》主題曲YT破1億播放！YOASOBI僅一個月刷新J-POP最速紀錄</a></div>
+                <div class="item item2-2">2023年05月18日</div>
+    
+                <div class="item item2"><a class="migi" href="https://ynews.page.link/kHpZb" target="_blank">Jpop／YOSHIKI啟動個人世界巡迴 X JAPAN新單曲7月這天上架</a></div>
+                <div class="item item2-2">2023年05月16日</div>
+    
+                <div class="item item2"><a class="migi" href="https://ynews.page.link/n3Nsf" target="_blank">Jpop／日本超級新人要來了 藤井風7月台北開唱</a></div>
+                <div class="item item2-2">2023年04月14日</div>
+    
+                <div class="item item2"><a class="migi" href="https://ynews.page.link/NtddF" target="_blank">Jpop／米津玄師再破「億」次元 這首神曲衝8億次瀏覽</a></div>
+                <div class="item item2-2">2023年04月10日</div>
+    
+                <div class="item item2"><a class="migi" href="https://ynews.page.link/z18UV" target="_blank">Jpop／日本最會做電影原聲帶的樂團來了 RADWIMPS確定7月登台</a></div>
+                <div class="item item2-2">2023年04月7日</div>
+        </div>
+        
+
+        <div class="randommusictitle"><b>RandomMusic</b></div>
+            <div id="songContainer">
+        </div>
+                
+    
+            <script>
+                // 圖片路徑和對應的YouTube歌曲ID
+                var songs = [
+                    { imagePath: "隨機歌曲/夜.jpg", youtubeId: "x8VYWazR5mE" },
+                    { imagePath: "隨機歌曲/怪物.jpg", youtubeId: "dy90tA3TT1c" },
+                    { imagePath: "隨機歌曲/ANO.jpg", youtubeId: "-lec--FlSJ4" },
+                    { imagePath: "隨機歌曲/boku.jpg", youtubeId: "_LzAfYUd70E" },
+                    { imagePath: "隨機歌曲/BYEBYE.jpg", youtubeId: "G2Dl0q0XHx8" },
+                    { imagePath: "隨機歌曲/DEVIL.jpg", youtubeId: "UyAcwI-vP64" },
+                    { imagePath: "隨機歌曲/fridaynight.jpg", youtubeId: "4Pls29qqg6Y" },
+                    { imagePath: "隨機歌曲/HND.jpg", youtubeId: "pRlzN2I9Knw" },
+                    { imagePath: "隨機歌曲/horoyoi.jpg", youtubeId: "1jPyWdBPVfI" },
+                    { imagePath: "隨機歌曲/kirari.jpg", youtubeId: "TcLLpZBWsck" },
+                    { imagePath: "隨機歌曲/LIMBO.jpg", youtubeId: "-P-SgEFh-SY" },
+                    { imagePath: "隨機歌曲/mela.jpg", youtubeId: "aRDURmIYBZ4" },
+                    { imagePath: "隨機歌曲/nezu.jpg", youtubeId: "-FWIhd1J1K0" },
+                    { imagePath: "隨機歌曲/overdose.jpg", youtubeId: "H08YWE4CIFQ" },
+                    { imagePath: "隨機歌曲/YELLOW.jpg", youtubeId: "1_lap6dzSUc" },
+                    { imagePath: "隨機歌曲/三色.jpg", youtubeId: "iOQawGuWnIQ" },
+                    { imagePath: "隨機歌曲/六兆年.png", youtubeId: "Om3MTou2kPg" },
+                    { imagePath: "隨機歌曲/可愛.jpg", youtubeId: "K4xLi8IF1FM" },
+                    { imagePath: "隨機歌曲/哭阿.jpg", youtubeId: "T0D--ZghQ-s" },
+                    { imagePath: "隨機歌曲/喜歡.jpg", youtubeId: "g8ENtHe2hMU" },
+                    { imagePath: "隨機歌曲/夢.jpg", youtubeId: "sAuEeM_6zpk" },
+                    { imagePath: "隨機歌曲/子.jpg", youtubeId: "7HgJIAUtICU" },
+                    { imagePath: "隨機歌曲/幾度悲傷.jpg", youtubeId: "cjkkFFF2N0k" },
+                    { imagePath: "隨機歌曲/愛傳.jpg", youtubeId: "9qRCARM_LfE" },
+                    { imagePath: "隨機歌曲/打上花火.jpg", youtubeId: "-tKVN2mAKRI" },
+                    { imagePath: "隨機歌曲/斜陽.jpg", youtubeId: "bqigIHMComE" },
+                    { imagePath: "隨機歌曲/春待.jpg", youtubeId: "FVZJJ2v1Zys" },
+                    { imagePath: "隨機歌曲/死.jpg", youtubeId: "y_IqIi3tQDs" },
+                    { imagePath: "隨機歌曲/煙.jpg", youtubeId: "V_iQu-Q7xBc" },
+                    { imagePath: "隨機歌曲/白日夢.jpg", youtubeId: "9k_csTdypRQ" },
+                    { imagePath: "隨機歌曲/瞳.jpg", youtubeId: "XEEXE8Ei5SA" },
+                    { imagePath: "隨機歌曲/色彩.jpg", youtubeId: "E9Dru15yq9w" },
+                    { imagePath: "隨機歌曲/花亡霊.jpg", youtubeId: "9lVPAWLWtWc" },
+                    { imagePath: "隨機歌曲/花塔.jpg", youtubeId: "Rwzy6Qt8gq8" },
+                    { imagePath: "隨機歌曲/血流.jpg", youtubeId: "munngDZLwO4" },
+                    { imagePath: "隨機歌曲/都落.jpg", youtubeId: "pHdJmDFYqTU" },
+                    { imagePath: "隨機歌曲/雪解.jpg", youtubeId: "aLTQmyIGoXg" },
+                    { imagePath: "隨機歌曲/食蟲植物.jpg", youtubeId: "F9eCSWEJYjk" },
+                    { imagePath: "隨機歌曲/單焦點.jpg", youtubeId: "TuAT5wCPo4c" },
+                    { imagePath: "隨機歌曲/三原色.jpg", youtubeId: "nhOhFOoURnE" },
+                    { imagePath: "隨機歌曲/希望論.jpg", youtubeId: "ikqA7l2QHc4" },
+                    { imagePath: "隨機歌曲/PAKU.jpg", youtubeId: "aSvp9Fj9OL8" },
+                    { imagePath: "隨機歌曲/水平線.jpg", youtubeId: "iqEr3P78fz8" },
+                    { imagePath: "隨機歌曲/鸚鵡.jpg", youtubeId: "j83OVgv6woA" },
+                    { imagePath: "隨機歌曲/SOB.jpg", youtubeId: "MhFr2LnikQk" },
+                ];
+        
+                // 隨機選擇四張圖片
+                var randomSongs = [];
+                while (randomSongs.length < 4) {
+                    var randomIndex = Math.floor(Math.random() * songs.length);
+                    if (randomSongs.indexOf(songs[randomIndex]) === -1) {
+                        randomSongs.push(songs[randomIndex]);
+                    }
+                }
+        
+                // 將選擇的圖片顯示在網頁上
+                var songContainer = document.getElementById("songContainer");
+                for (var i = 0; i < randomSongs.length; i++) {
+                    var songDiv = document.createElement("div");
+                    songDiv.className = "song";
+                    var image = document.createElement("img");
+                    image.src = randomSongs[i].imagePath;
+                    image.setAttribute("data-youtube-id", randomSongs[i].youtubeId);
+                    image.addEventListener("click", openSong);
+                    songDiv.appendChild(image);
+                    songContainer.appendChild(songDiv);
+                }
+        
+                // 點擊圖片時在新視窗中開啟相應的YouTube歌曲
+                function openSong(event) {
+                    var youtubeId = event.target.getAttribute("data-youtube-id");
+                    if (youtubeId) {
+                        window.open("https://www.youtube.com/watch?v=" + youtubeId);
+                    }
+                }
+            </script>
+        <script src="sakura.min.js"></script>
+        <script>var sakura = new Sakura('body');</script>
+
+        <footer>
+            
+            <svg viewBox="0 0 120 28">
+             <defs> 
+               <mask id="xxx">
+                 <circle cx="7" cy="12" r="40" fill="#fff" />
+               </mask>
+               
+               <filter id="goo">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+                  <feColorMatrix in="blur" mode="matrix" values="
+                       1 0 0 0 0  
+                       0 1 0 0 0  
+                       0 0 1 0 0  
+                       0 0 0 13 -9" result="goo" />
+                  <feBlend in="SourceGraphic" in2="goo" />
+                </filter>
+                 <path id="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
+              </defs> 
+            
+               <use id="wave3" class="wave" xlink:href="#wave" x="0" y="-2" ></use> 
+               <use id="wave2" class="wave" xlink:href="#wave" x="0" y="0" ></use>
+             
+              <g id="topball">
+              <circle class="ball" cx="110" cy="8" r="4" stroke="none" stroke-width="0" fill="gray" />
+            
+                <g class="arrow">
+                <polyline class="" points="108,8 110,6 112,8" fill="none"  />
+                <polyline class="" points="110,6 110,10.5" fill="none"  />
+                </g>
+                
+              </g>
+              
+              <g class="gooeff">
+              <circle class="drop drop1" cx="20" cy="2" r="1.8"  />
+              <circle class="drop drop2" cx="25" cy="2.5" r="1.5"  />
+              <circle class="drop drop3" cx="16" cy="2.8" r="1.2"  />
+                <use id="wave1" class="wave" xlink:href="#wave" x="0" y="1" />
+    
+                <!-- g mask="url(#xxx)">
+                <path   id="wave1"  class="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
+                </g>
+              </g -->
+            </svg>
+
+            <script src="./indexscrolltop.js"></script>
+
+            <div class="bgcontainer">
+            <div class="bg"></div>
+            </div>
+            </footer>
+            
+        </div>
+</body>
+</html>

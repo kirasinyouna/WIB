@@ -1,0 +1,71 @@
+@import "compass/css3";
+ @import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+ body {
+	 background-position: center center;
+	 font-family: 'Open Sans', sans-serif;
+}
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    left: 14%;
+    top:200px;
+    transform: translate(-50%, -50%);
+  }
+  
+  .image-container img {
+    position:absolute;
+    left:-50px;
+    top:-50px;
+  }
+  .intro-title{
+    font-size: 20px;
+  }
+  .image-text {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 10px;
+    font-size: auto;
+    border-radius: 10%;
+  }
+
+
+  
+  .poyo:hover .image-text {
+    opacity: 1;
+    border-radius: 10%;
+    animation: poyo .6s;
+  }
+
+
+  .poyo:hover img{
+    opacity:0;
+  }
+
+  @keyframes poyo {
+    from, to { transform: none; }
+    10% { transform: scale(1.2); }
+    40% { transform: scale(.9); }
+    60% { transform: scale(1.04); }
+    80% { transform: scale(.98); }
+  }

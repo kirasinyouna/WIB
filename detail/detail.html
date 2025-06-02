@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="detail.css" >
+    <link rel="stylesheet" href="../toggle.css">
+    <link rel="stylesheet" href="dist/sakura.css" />
+    <link rel="stylesheet" href="./card.css" />
+    <link rel="stylesheet" href="./card2.css" />
+    <link rel="stylesheet" href="./card3.css" />
+    <link rel="stylesheet" href="./card4.css" />
+    <link rel="stylesheet" href="./card5.css" />
+    <title>Websites</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* outline: 1px solid magenta; */
+        }
+
+        html{
+            background-color: #28505D;
+            overflow-x: hidden            
+        }
+
+        .planePath {
+        stroke: #D9DADA;
+        stroke-width: .1%;
+        stroke-width: .5%;
+        stroke-dasharray: 1% 2%;
+        stroke-linecap: round;
+        fill: none;
+        }
+
+        .fil1 {
+        fill: #D9DADA;
+        }
+
+        .fil2 {
+        fill: #C5C6C6;
+        }
+
+        .fil4 {
+        fill: #9D9E9E;
+        }
+
+        .fil3 {
+        fill: #AEAFB0;
+        }
+
+
+        
+        .yeargallery{
+            text-shadow: 2px 2px #070707;
+            
+        }
+        .important{
+            text-shadow: 2px 2px #070707;
+        }
+           
+        .headerimage{
+            position:relative;
+            z-index:1;
+            cursor: pointer;
+        }
+        .headeritem1{
+            display: grid;
+            background-color: #484848;
+            height:90px;
+            z-index: 1;
+            box-shadow: inset 0px 0px 10px 5px rgba(0,0,0,6);
+        }
+
+        .headerlogo{
+            text-align: center;
+            position:absolute;
+            top: 100px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: black solid 2px;
+            background-color: #6e6e6e;
+            border-radius:100px;
+            z-index: 1;
+            box-shadow:0px 0px 8px 3px #000000;
+        }
+
+        .headerlogo2{
+            /* position:relative; */
+            z-index: 1;
+            
+        }
+        
+
+        .header img{
+            border: black solid 2px;
+            background-color: #6e6e6e;
+            border-radius:100px;
+            scale:60%;
+            
+        }
+
+        .headeritem2{
+            background-color: #343434;
+            height:10px;
+            box-shadow:0px 0px 8px 3px #000000 inset;
+        }
+        .headeritem3{
+            /* display: grid; */
+            background-color: #484848;
+            /* grid-template-columns: auto auto; */
+            color: aliceblue;
+            height:60px;
+            font-size: xx-large;
+            box-shadow:0px 0px 8px 0px #000000 inset;
+        }
+        .news{
+            
+            border: 1px solid red;
+            border-radius: 20px;
+            text-align: center;
+            margin: 15px;
+            padding: 100px;
+        }
+
+        #page_top{
+        width: 90px;
+        height: 90px;
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        background: #818181ba;
+        opacity: 1;
+        border-radius: 50%;
+        box-shadow:0px 0px 8px 3px #000000;
+        }
+        #page_top a{
+        position: relative;
+        display: block;
+        width: 90px;
+        height: 90px;
+        text-decoration: none;
+        
+        }
+        #page_top a::before{
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        content: '\f102';
+        font-size: 25px;
+        color: #fff;
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: -40px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        text-align: center;
+        }
+        #page_top a::after{
+        content: 'PAGE TOP';
+        font-size: 13px;
+        color: #fff;
+        position: absolute;
+        top: 45px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        text-align: center;
+        }
+
+        .news_container {
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: auto;
+            max-width: 1450px;
+            height: 280px;            
+            background-color: #fefefe;
+            border-radius: 1em;
+            box-shadow: 1px 2px 10px 5px rgba(0, 0, 0, 0.4);
+            margin-top:50px;
+        }
+        a:link {
+            text-decoration: none;
+            color: #9b8788;
+        }
+        a:active{
+            text-decoration:blink;
+        }
+        a:hover{
+            text-decoration:none;
+            font-size: 17px;
+            color: #716363;
+        }
+        a:visited{
+            text-decoration:none;
+            color: #9b8788;
+        }
+
+       a{
+        text-decoration:none !important;
+       }
+
+
+       footer {
+        position:relative;
+        top:600px
+        }
+        footer div {
+        position:relative;
+        background-color:#343434;
+        bottom: -0px;
+        margin: -50px 0px 0px 0px;
+        padding:0px;
+        color: #fff;
+        text-align:center;
+        font-size: xx-large;
+        font-family: "微軟正黑體";
+        text-shadow: 3px 3px #070707;
+        
+        }
+        footer .bg{
+            height: 50px;
+            width: 600px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        svg {
+        width:100%;
+        }
+        .arrow {
+        stroke-width: .3px;
+        stroke:rgb(255, 255, 255);
+        }
+        #topball {
+        animation: ball 1.5s ease-in-out;
+        animation-iteration-count:infinite;
+        animation-direction: alternate;
+        animation-delay: 0.3s;
+        cursor:pointer;
+        }
+
+        .wave {
+        animation: wave 3s linear;
+        animation-iteration-count:infinite;
+        fill: #343434;
+        }
+        .drop {
+        fill: transparent;
+        animation: drop 5s ease infinite normal;
+        stroke: #343434;
+        stroke-width:0.5;
+        opacity:.6; 
+        transform: translateY(80%);
+        }
+        .drop1 {
+        transform-origin: 20px 3px;
+        }
+        .drop2 {
+        animation-delay: 3s;
+        animation-duration:3s;
+        transform-origin: 25px 3px;
+        }
+        .drop3 {
+        animation-delay: -2s;
+        animation-duration:3.4s;
+        transform-origin: 16px 3px;
+        }
+        .gooeff {
+            filter: url(#goo);
+        }
+        #wave2 {
+        animation-duration:5s;
+        animation-direction: reverse;
+        opacity: .6
+        }
+        #wave3 {
+        animation-duration: 7s;
+        opacity:.3;
+        }
+        @keyframes drop {
+        0% {
+            transform: translateY(80%); 
+            opacity:.6; 
+        }
+        80% {
+            transform: translateY(80%); 
+            opacity:.6; 
+        }
+        90% { 
+            transform: translateY(10%) ; 
+            opacity:.6; 
+        }
+        100% { 
+            transform: translateY(0%) scale(1.5);  
+            stroke-width:0.2;
+            opacity:0; 
+        }
+        }
+        @keyframes wave {
+        to {transform: translateX(-100%);}
+        }
+        @keyframes ball {
+        to {transform: translateY(20%);}
+        }
+
+       
+       
+        
+
+        .inner li {
+            position:relative;
+            text-align: center;
+        }
+
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 100%;
+        }
+        
+        ul.drop-down-menu {
+            /* font-size: 13px; */
+            font-size: xx-large;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            
+        }
+
+        ul.drop-down-menu > li {
+            flex: 1;
+            position: relative;
+        }
+
+        ul.drop-down-menu a {
+            background-color: transparent;
+            color: #FFFFFF;
+            text-shadow: 2px 2px #070707;
+            display: block;
+            padding: 0 30px;
+            text-decoration: none;
+            line-height: 60px;
+        }
+
+        ul.drop-down-menu a:hover {
+            background-color: rgba(0, 0, 0, 0.664);
+            font-size: xx-large;
+            color: #fff;
+        }
+
+        ul.drop-down-menu li:hover > a {
+            /* background-color: #ef5c28; */
+            color: #fff;
+        }
+
+        ul.drop-down-menu ul {
+            display: none;
+            position: absolute;
+            z-index: 99;
+            left: 0;
+            top: 100%;
+            min-width: 180px;
+        }
+
+        ul.drop-down-menu li:hover > ul {
+            display: block;
+        }
+
+        ul.drop-down-menu ul li {
+            border-bottom: #ccc 1px solid;
+            position: relative;
+        }
+
+        ul.drop-down-menu ul li:hover > ul {
+            display: block;
+        }
+
+        ul.drop-down-menu ul ul {
+            left: 100%;
+            top: 0;
+        }
+
+        /* 新增样式 */
+        ul.drop-down-menu ul li {
+            display: inline-block;
+            width: 30%;
+            
+            border: none;
+        }
+
+        ul.drop-down-menu ul ul {
+            top: 0;
+            left: 100%;
+        }
+
+        /* 修改数字选项区块的宽度 */
+        ul.drop-down-menu ul {
+            width: 600px; /* 设置数字选项区块的宽度 */
+        }
+
+        ul.drop-down-menu ul li a {
+            width: 100%;
+            padding: 0 10px;
+        }
+        .year{
+            background-color: #484848b6;
+            font-size: 20px;
+            box-shadow:4px 0px 8px 2px #000000;
+        }
+
+        a{
+            transition: .3s;
+        }
+
+        a:hover{
+            transform: scale(1.05);
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="headerlogo">
+        <div class="headerlogo2">
+                <div class="headerimage">
+                  <a href="../index.html">
+                    <img src="../img/Logo.png" width="200px" height="200px" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            
+            <div class="headeritem1">
+
+                <div id="navArea">
+                <nav>
+                    <div class="inner">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="./detail.html">Detail</a></li>
+                    </div>
+                </nav>
+
+                <div class="toggle-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id="mask"></div>
+            </div>
+
+        </div>
+
+            <div class="headeritem2"></div>
+
+            <div class="headeritem3">
+                <ul class="drop-down-menu">
+                    <li ><a href="#">Year gallery</a>
+                        <ul class="year">
+                            <li><a href="../2023.html">2023</a></li>
+                            <li><a href="../2022.html">2022</a></li>
+                            <li><a href="../2021.html">2021</a></li>
+                            <li><a href="../2020.html">2020</a></li>
+                            <li><a href="../2019.html">2019</a></li>
+                            <li><a href="../2018.html">2018</a></li>
+                            <li><a href="../2017.html">2017</a></li>
+                            <li><a href="../2016.html">2016</a></li>
+                            <li><a href="../2015.html">2015</a></li>
+                            <li><a href="../2014.html">2014</a></li>
+                            <li><a href="../2013.html">2013</a></li>
+                            <li><a href="../2012.html">2012</a></li>
+                            <li><a href="../2011.html">2011</a></li>
+                            <li><a href="../2010.html">2010</a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../intro.html">歌手介紹</a></li>
+                </ul>
+            </div>
+        <script src="../toggle.js"></script>
+    </div>
+
+    <div class="list">
+
+        <div class="item1">
+            <div class="business-card" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="front">
+                <div class="name">
+                    <span class="first">謝鈺翔</span> 
+                    <span class="last">設計組</span>
+                    <span class="title"></span>
+                  </div>
+              </div>
+              <div class="back">
+                <div class="container-sm">
+                  <figure class="logo-white"></figure>
+                </div>
+                <div class="container-lg">
+                  <ul class="social fa-ul">
+                    <li><i class="fa fa-li fa-globe"></i><p>學號:1111833</p></li>
+                    <li><i class="fa fa-li fa-envelope"></i><p>fandy2103323@gmail.com</p></li>
+                    <li><i class="fa fa-li fa-phone"></i><p>0966-31-752</p></li>
+                    <li><i class="fa fa-li fa-codepen"></i><p></p></li>
+                    <li><i class="fa fa-li fa-github"></i><p></p></li>
+                    <li><i class="fa fa-li fa-reddit"></i><p></p></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item2">
+            <div class="business-card2" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper2">
+              <div class="front2">
+                <div class="name2">
+                    <span class="first2">小崎晃志郎</span> 
+                    <span class="last2">設計組</span>
+                    <span class="title2"></span>
+                  </div>
+                </div>
+              <div class="back2">
+                <div class="container-sm2">
+                  <figure class="logo-white2"></figure>
+                </div>
+                <div class="container-lg2">
+                  <ul class="social2 fa-ul2">
+                    <li><i class="fa2 fa-li2 fa-globe2"></i><p>學號:1100447</p></li>
+                    <li><i class="fa2 fa-li2 fa-envelope2"></i><p>kosakikoshiro1@gmail.com</p></li>
+                    <li><i class="fa2 fa-li2 fa-phone2"></i><p>0989-111-394</p></li>
+                    <li><i class="fa2 fa-li2 fa-codepen2"></i><p></p></li>
+                    <li><i class="fa2 fa-li2 fa-github2"></i><p></p></li>
+                    <li><i class="fa2 fa-li2 fa-reddit2"></i><p></p></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div></div>
+
+        <div class="item3">
+            <div class="business-card3" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper3">
+              <div class="front3">
+                <div class="name3">
+                    <span class="first3">鄭錡樺</span> 
+                    <span class="last3">設計組</span>
+                    <span class="title3"></span>
+                  </div>
+              </div>
+              <div class="back3">
+                <div class="container-sm3">
+                  <figure class="logo-white3"></figure>
+                </div>
+                <div class="container-lg3">
+                  <ul class="social3 fa-ul3">
+                    <li><i class="fa3 fa-li3 fa-globe3"></i><p>學號:1111851</p></li>
+                    <li><i class="fa3 fa-li3 fa-envelope3"></i><p>patty921217@gmail.com</p></li>
+                    <li><i class="fa3 fa-li3 fa-phone3"></i><p>0968-001-217 </p></li>
+                    <li><i class="fa3 fa-li3 fa-codepen3"></i><p></p></li>
+                    <li><i class="fa3 fa-li3 fa-github3"></i><p></p></li>
+                    <li><i class="fa3 fa-li3 fa-reddit3"></i><p></p></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item4">
+            <div class="business-card4" ontouchstart="this.classList.toggle('hover');">
+                <div class="flipper4">
+                  <div class="front4">
+                    <div class="name4">
+                        <span class="first4">王詮盛</span> 
+                        <span class="last4">設計組</span>
+                        <span class="title4"></span>
+                      </div>
+                  </div>
+                  <div class="back4">
+                    <div class="container-sm4">
+                      <figure class="logo-white4"></figure>
+                    </div>
+                    <div class="container-lg4">
+                      <ul class="social4 fa-ul4">
+                        <li><i class="fa4 fa-li4 fa-globe4"></i><p>學號:1111858</p></li>
+                        <li><i class="fa4 fa-li4 fa-envelope4"></i><p>sampson0726@gmail.com </p></li>
+                        <li><i class="fa4 fa-li4 fa-phone4"></i><p>0937-029-390</p></li>
+                        <li><i class="fa4 fa-li4 fa-codepen4"></i><p></p></li>
+                        <li><i class="fa4 fa-li4 fa-github4"></i><p></p></li>
+                        <li><i class="fa4 fa-li4 fa-reddit4"></i><p></p></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+        <div class="item5">
+            <div class="business-card5" ontouchstart="this.classList.toggle('hover');">
+                <div class="flipper5">
+                  <div class="front5">
+                    <div class="name5">
+                        <span class="first5">張宸瑋</span> 
+                        <span class="last5">設計組</span>
+                        <span class="title5"></span>
+                      </div>
+                  </div>
+                  <div class="back5">
+                    <div class="container-sm5">
+                      <figure class="logo-white5"></figure>
+                    </div>
+                    <div class="container-lg5">
+                      <ul class="social5 fa-ul5">
+                        <li><i class="fa5 fa-li5 fa-globe5"></i><p>學號:1091809</p></li>
+                        <li><i class="fa5 fa-li5 fa-envelope5"></i><p>S10372005@gmail.com</p></li>
+                        <li><i class="fa5 fa-li5 fa-phone5"></i><p>0983-987-936</p></li>
+                        <li><i class="fa5 fa-li5 fa-codepen5"></i><p></p></li>
+                        <li><i class="fa5 fa-li5 fa-github5"></i><p></p></li>
+                        <li><i class="fa5 fa-li5 fa-reddit5"></i><p></p></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+    </div>
+
+    
+    <svg viewBox="0 0 3387 1270">
+        <path id="planePath" class="planePath" d="M-226 626c439,4 636,-213 934,-225 755,-31 602,769 1334,658 562,-86 668,-698 266,-908 -401,-210 -893,189 -632,630 260,441 747,121 1051,91 360,-36 889,179 889,179" />
+        <g id="plane">
+          <polygon class="fil1" points="-141,-10 199,0 -198,-72 -188,-61 -171,-57 -184,-57 " />
+          <polygon class="fil2" points="199,0 -141,-10 -163,63 -123,9 " />
+          <polygon class="fil3" points="-95,39 -113,32 -123,9 -163,63 -105,53 -108,45 -87,48 -90,45 -103,41 -94,41 " />
+          <path class="fil4" d="M-87 48l-21 -3 3 8 19 -4 -1 -1zm-26 -16l18 7 -2 -1 32 -7 -29 1 11 -4 -24 -1 -16 -18 10 23zm10 9l13 4 -4 -4 -9 0z" />
+          <polygon class="fil1" points="-83,28 -94,32 -65,31 -97,38 -86,49 -67,70 199,0 -123,9 -107,27 " />
+        </g>
+        <!-- Define the motion path animation -->
+        <animateMotion xlink:href="#plane" dur="5s" repeatCount="indefinite" rotate="auto">
+          <mpath xlink:href="#planePath" />
+        </animateMotion> 
+      </svg>
+
+
+      <footer>
+            
+        <svg viewBox="0 0 120 28">
+         <defs> 
+           <mask id="xxx">
+             <circle cx="7" cy="12" r="40" fill="#fff" />
+           </mask>
+           
+           <filter id="goo">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+              <feColorMatrix in="blur" mode="matrix" values="
+                   1 0 0 0 0  
+                   0 1 0 0 0  
+                   0 0 1 0 0  
+                   0 0 0 13 -9" result="goo" />
+              <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+             <path id="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
+          </defs> 
+        
+           <use id="wave3" class="wave" xlink:href="#wave" x="0" y="-2" ></use> 
+           <use id="wave2" class="wave" xlink:href="#wave" x="0" y="0" ></use>
+         
+          <g id="topball">
+          <circle class="ball" cx="110" cy="8" r="4" stroke="none" stroke-width="0" fill="gray" />
+        
+            <g class="arrow">
+            <polyline class="" points="108,8 110,6 112,8" fill="none"  />
+            <polyline class="" points="110,6 110,10.5" fill="none"  />
+            </g>
+            
+          </g>
+          
+          <g class="gooeff">
+          <circle class="drop drop1" cx="20" cy="2" r="1.8"  />
+          <circle class="drop drop2" cx="25" cy="2.5" r="1.5"  />
+          <circle class="drop drop3" cx="16" cy="2.8" r="1.2"  />
+            <use id="wave1" class="wave" xlink:href="#wave" x="0" y="1" />
+
+            <!-- g mask="url(#xxx)">
+            <path   id="wave1"  class="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
+            </g>
+          </g -->
+        </svg>
+
+        <script src="../indexscrolltop.js"></script>
+
+        <div class="bgcontainer">
+        <div class="bg"></div>
+        </div>
+        </footer>
+        
+    </div>
+</body>
+</html>

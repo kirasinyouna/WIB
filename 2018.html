@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="toggle.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&display=swap" rel="stylesheet">
+    <title>Websites</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+    html{
+    font-size: 75%;
+    overflow-x: hidden
+    }
+
+
+    @media screen and (min-width: 468px) {
+    .item2 p, .item5 p, .item7 p{
+        scale:90%;
+    }
+    }
+
+    
+    @media screen and (min-width: 1024px) {
+    html  {
+        font-size: 100%;
+    }
+    }
+
+
+
+        body{ /*後ろの背景画像全部 */ 
+        /* 画像ファイルの指定 */
+        background-image:  url("./img/2018 Banner/2018.jpg" );
+        /* 画像を常に天地左右の中央に配置 */
+        background-position: center center;
+        
+        /* 画像をタイル状に繰り返し表示しない */
+        background-repeat: no-repeat;
+        
+        /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+        background-attachment: fixed;
+        
+        /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+        background-size: cover;
+        
+        }
+
+        body::before{
+        background-color: #020202;
+        background-size: 100%;
+        content: '';
+        opacity: .5;
+        position:fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -99;
+        }
+
+
+        .inner li{
+            position: relative;
+            text-align: center;
+        }
+
+        .arrow {
+        position: relative;
+        left:50%;
+        top: 500px;
+        width: 24px;
+        height: 24px;
+        scale: 170%;
+        z-index: 1;
+        }
+
+        .chevron {
+        position: absolute;
+        margin-left: -10px;
+        width: 28px;
+        height: 8px;
+        opacity: 0;
+        transform: scale3d(0.5, 0.5, 0.5);
+        animation: move 3s ease-out infinite;
+        }
+
+        .chevron:first-child {
+        animation: move 3s ease-out 1s infinite;
+        
+        }
+
+        .chevron:nth-child(2) {
+        animation: move 3s ease-out 2s infinite;
+        }
+
+        .chevron:before,
+        .chevron:after {
+        content: ' ';
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 51%;
+        background: #fff;
+        }
+
+        .chevron:before {
+        left: 0;
+        transform: skew(0deg, 30deg);
+        }
+
+        .chevron:after {
+        right: 0;
+        width: 50%;
+        transform: skew(0deg, -30deg);
+        }
+
+        @keyframes move {
+        25% {
+            opacity: 1;
+
+        }
+        33% {
+            opacity: 1;
+            transform: translateY(30px);
+        }
+        67% {
+            opacity: 1;
+            transform: translateY(40px);
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+        }
+        }
+
+        
+
+        .text {
+        display: block;
+        margin-top:-30px;
+        margin-left: -40px;
+        font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+        font-size: 12px;
+        scale:150%;
+        color: #fff;
+        text-transform: uppercase;
+        white-space: nowrap;
+        opacity: 1;
+        text-shadow: 1px 2px 3px #000000;
+        animation: pulse 2s linear alternate infinite;
+        }
+
+        @keyframes pulse {
+        to {
+            opacity: 1;
+        }
+        }
+
+        #page_top{
+        width: 90px;
+        height: 90px;
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        background: #818181ba;
+        opacity: 1;
+        border-radius: 50%;
+        box-shadow:0px 0px 8px 3px #000000;
+        }
+        #page_top a{
+        position: relative;
+        display: block;
+        width: 90px;
+        height: 90px;
+        text-decoration: none;
+        
+        }
+        #page_top a::before{
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        content: '\f102';
+        font-size: 25px;
+        color: #fff;
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: -40px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        text-align: center;
+        }
+        #page_top a::after{
+        content: 'PAGE TOP';
+        font-size: 13px;
+        color: #fff;
+        position: absolute;
+        top: 45px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        text-align: center;
+        }
+
+        .yearb{
+        z-index: 1;
+        position: relative;
+        transform: translate(-50%, -50%);
+        width: 90px;
+        height: 50px;
+        top:170px;
+        left:50%;
+        margin-top: -80px;
+        color: white;
+        font-weight: bold;
+        font-size: 150px;
+        text-shadow: 1px 2px 3px #000000;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .content{
+                z-index: 1;
+                position:relative;
+                top:250px;
+                width:auto;
+                height:auto;
+            }
+
+        
+        .yeargallery{
+            text-shadow: 2px 2px #070707;
+            
+        }
+        .important{
+            text-shadow: 2px 2px #070707;
+        }
+           
+        .headerimage{
+            position:relative;
+            z-index:1;
+            cursor: pointer;
+        }
+        .headeritem1{
+            display: grid;
+            background-color: #484848;
+            height:90px;
+            z-index: 1;
+            box-shadow:0px 0px 8px 0px #000000 inset;
+        }
+
+        .headerlogo{
+            text-align: center;
+            position:absolute;
+            top: 100px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: black solid 2px;
+            background-color: #6e6e6e;
+            border-radius:100px;
+            z-index: 1;
+            box-shadow:0px 0px 8px 3px #000000;
+        }
+
+        .headerlogo2{
+            z-index: 1;
+        }
+        
+
+        .header img{
+            border: black solid 2px;
+            background-color: #6e6e6e;
+            border-radius:100px;
+            scale:60%;
+            
+        }
+
+        .headeritem2{
+            background-color: #343434;
+            height:10px;
+            box-shadow:0px 0px 8px 3px #000000 inset;
+        }
+        .headeritem3{
+            /* display: grid; */
+            background-color: #484848;
+            /* grid-template-columns: auto auto; */
+            color: aliceblue;
+            height:60px;
+            font-size: xx-large;
+            box-shadow:0px 0px 8px 3px #010101 inset;
+        }
+
+        .round{
+            border: black solid 2px;
+            background-color: #6e6e6e;
+            border-radius:100px;
+        }
+
+
+
+        .main{
+            width:100%;
+        }
+
+        .copyright{
+            color: #FFFFFF;
+        }
+
+        .scroll_right {
+            -webkit-transition: 0.8s ease-in-out;
+            -moz-transition: 0.8s ease-in-out;
+            -o-transition: 0.8s ease-in-out;
+            transition: 0.8s ease-in-out;
+            transform: translateX(30px);
+            opacity: 0;
+            filter: alpha(opacity=0);
+            -moz-opacity: 0;
+        }
+        .scroll_right.on {
+            opacity: 1.0;
+            filter: alpha(opacity=100);
+            -moz-opacity: 1.0;
+            transform: translateX(0);
+        }
+
+        .scroll_left {
+            -webkit-transition: 0.8s ease-in-out;
+            -moz-transition: 0.8s ease-in-out;
+            -o-transition: 0.8s ease-in-out;
+            transition: 0.8s ease-in-out;
+            transform: translateX(-30px);
+            opacity: 0;
+            filter: alpha(opacity=0);
+            -moz-opacity: 0;
+        }
+        .scroll_left.on {
+            opacity: 1.0;
+            filter: alpha(opacity=100);
+            -moz-opacity: 1.0;
+            transform: translateX(0);
+        }
+
+        .item1 img{
+            scale:90%;
+            opacity:0;
+        }
+
+
+
+        .item2,.item7,.item5{
+            position: relative;
+            scale:90%;
+        }
+
+        .item1 img, .item2 img, .item7 img, .item5 img{
+            box-shadow:0px 0px 8px 3px #000000;
+            border-radius: 20px;
+            
+        }
+
+        .item2, .item5, .item7{
+            transition-duration: .5s;
+        }
+
+
+        .item2:hover, .item5:hover, .item7:hover{
+            
+            transform: translateY(-5px);
+        }
+
+
+        .item2 p,.item7 p{
+            position: absolute;
+            top: 190px;/*画像の左上に配置*/
+            right:0;
+            color: rgb(0, 0, 0);/*文字を白に*/
+            width:450px;
+            height:300px;
+            background: rgba(210, 210, 210, 0.814);/*背景色*/
+            font-family: 'Noto Serif TC', serif;
+            font-size: 20px;
+            line-height: 2;/*行高は1に*/
+            padding: 5px 10px;/*文字周りの余白*/
+            box-shadow:0px 0px 8px 3px #000000;
+        }
+
+
+        .item5 p{
+            position: absolute;
+            top: 190px;/*画像の左上に配置*/
+            left: 0;
+            margin: 0; /*余計な隙間を除く*/
+            color: rgb(0, 0, 0);/*文字を白に*/
+            width:450px;
+            height:300px;
+            background: rgba(253, 253, 253, 0.552);/*背景色*/
+            font-family: 'Noto Serif TC', serif;
+            font-size: 20px;
+            line-height: 3;/*行高は1に*/
+            padding: 5px 10px;/*文字周りの余白*/
+            box-shadow:0px 0px 8px 3px #000000;
+        }
+
+        .item5 p{
+            font-size: 20px;
+            line-height: 2;/*行高は1に*/
+            padding: 5px 10px;/*文字周りの余白*/
+        }
+
+        .item7 p{
+            font-size: 20px;
+            line-height: 2;/*行高は1に*/
+            padding: 5px 10px;/*文字周りの余白*/
+        }
+
+
+        footer {
+        position:relative;
+        
+        }
+        footer div {
+        position:relative;
+        background-color:#343434;
+        bottom: -0px;
+        margin: -50px 0px 0px 0px;
+        padding:0px;
+        color: #fff;
+        text-align:center;
+        font-size: xx-large;
+        font-family: "微軟正黑體";
+        text-shadow: 3px 3px #070707;
+        
+        }
+        footer .bg{
+            height: 50px;
+            width: 600px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        svg {
+        width:100%;
+        }
+        .arrow {
+        stroke-width: .3px;
+        stroke:rgb(255, 255, 255);
+        }
+        #topball {
+        animation: ball 1.5s ease-in-out;
+        animation-iteration-count:infinite;
+        animation-direction: alternate;
+        animation-delay: 0.3s;
+        cursor:pointer;
+        }
+
+        .wave {
+        animation: wave 3s linear;
+        animation-iteration-count:infinite;
+        fill: #343434;
+        }
+        .drop {
+        fill: transparent;
+        animation: drop 5s ease infinite normal;
+        stroke: #343434;
+        stroke-width:0.5;
+        opacity:.6; 
+        transform: translateY(80%);
+        }
+        .drop1 {
+        transform-origin: 20px 3px;
+        }
+        .drop2 {
+        animation-delay: 3s;
+        animation-duration:3s;
+        transform-origin: 25px 3px;
+        }
+        .drop3 {
+        animation-delay: -2s;
+        animation-duration:3.4s;
+        transform-origin: 16px 3px;
+        }
+        .gooeff {
+            filter: url(#goo);
+        }
+        #wave2 {
+        animation-duration:5s;
+        animation-direction: reverse;
+        opacity: .6
+        }
+        #wave3 {
+        animation-duration: 7s;
+        opacity:.3;
+        }
+        @keyframes drop {
+        0% {
+            transform: translateY(80%); 
+            opacity:.6; 
+        }
+        80% {
+            transform: translateY(80%); 
+            opacity:.6; 
+        }
+        90% { 
+            transform: translateY(10%) ; 
+            opacity:.6; 
+        }
+        100% { 
+            transform: translateY(0%) scale(1.5);  
+            stroke-width:0.2;
+            opacity:0; 
+        }
+        }
+        @keyframes wave {
+        to {transform: translateX(-100%);}
+        }
+        @keyframes ball {
+        to {transform: translateY(20%);}
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 100%;
+        }
+        
+        ul.drop-down-menu {
+            /* font-size: 13px; */
+            font-size: xx-large;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            
+        }
+
+        ul.drop-down-menu > li {
+            flex: 1;
+            position: relative;
+        }
+
+        ul.drop-down-menu a {
+            background-color: transparent;
+            color: #FFFFFF;
+            text-shadow: 2px 2px #070707;
+            display: block;
+            padding: 0 30px;
+            text-decoration: none;
+            line-height: 60px;
+        }
+
+        ul.drop-down-menu a:hover {
+            background-color: rgba(0, 0, 0, 0.664);
+            font-size: xx-large;
+            color: #fff;
+        }
+
+        ul.drop-down-menu li:hover > a {
+            /* background-color: #ef5c28; */
+            color: #fff;
+        }
+
+        ul.drop-down-menu ul {
+            display: none;
+            position: absolute;
+            z-index: 99;
+            left: 0;
+            top: 100%;
+            min-width: 180px;
+        }
+
+        ul.drop-down-menu li:hover > ul {
+            display: block;
+        }
+
+        ul.drop-down-menu ul li {
+            border-bottom: #ccc 1px solid;
+            position: relative;
+        }
+
+        ul.drop-down-menu ul li:hover > ul {
+            display: block;
+        }
+
+        ul.drop-down-menu ul ul {
+            left: 100%;
+            top: 0;
+        }
+
+        /* 新增样式 */
+        ul.drop-down-menu ul li {
+            display: inline-block;
+            width: 30%;
+            
+            border: none;
+        }
+
+        ul.drop-down-menu ul ul {
+            top: 0;
+            left: 100%;
+        }
+
+        /* 修改数字选项区块的宽度 */
+        ul.drop-down-menu ul {
+            width: 600px; /* 设置数字选项区块的宽度 */
+        }
+
+        ul.drop-down-menu ul li a {
+            width: 100%;
+            padding: 0 10px;
+        }
+        .year{
+            background-color: #484848b6;
+            font-size: 20px;
+            box-shadow:4px 0px 8px 2px #000000;
+        }
+    
+        a{
+            transition: .3s;
+        }
+
+        a:hover{
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="headerlogo">
+            <div class="headerlogo2">
+                <div class="headerimage">
+                    <a href="./index.html">
+                    <img src="./img/Logo.png" width="200px" height="200px" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            
+            <div class="headeritem1">
+
+                <div id="navArea">
+                <nav>
+                    <div class="inner">
+                        <ul>
+                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="./detail/detail.html">Detail</a></li>
+                    </div>
+                </nav>
+
+                <div class="toggle-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id="mask"></div>
+            </div>
+
+        </div>
+
+            <div class="headeritem2"></div>
+
+            <div class="headeritem3">
+                <ul class="drop-down-menu">
+                    <li ><a href="#">Year gallery</a>
+                        <ul class="year">
+                            <li><a href="./2023.html">2023</a></li>
+                            <li><a href="./2022.html">2022</a></li>
+                            <li><a href="./2021.html">2021</a></li>
+                            <li><a href="./2020.html">2020</a></li>
+                            <li><a href="./2019.html">2019</a></li>
+                            <li><a href="./2018.html">2018</a></li>
+                            <li><a href="./2017.html">2017</a></li>
+                            <li><a href="./2016.html">2016</a></li>
+                            <li><a href="./2015.html">2015</a></li>
+                            <li><a href="./2014.html">2014</a></li>
+                            <li><a href="./2013.html">2013</a></li>
+                            <li><a href="./2012.html">2012</a></li>
+                            <li><a href="./2011.html">2011</a></li>
+                            <li><a href="./2010.html">2010</a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./intro.html">歌手介紹</a></li>
+                </ul>
+            
+            </div>
+            <script src="./toggle.js"></script>
+        </div>
+            <div class="content">
+                <div class="yearb">2018</div>
+            </div>
+
+            <div class="arrow">
+                <div class="chevron"></div>
+                <div class="chevron"></div>
+                <div class="chevron"></div>
+                <span class="text">Scroll down</span>
+            </div>
+
+            <div class="item1">
+                <a>
+                    <img src="./img/2023 Banner/2023.jpg" alt="Image 1" width="100%">
+                    <div class=""></div>
+                    <div class="caption"></div>
+                </a>
+            </div>
+            <div class="item2">
+                <a href="https://youtu.be/XSkpuDseenY" target="_blank">
+                    <img src="./img/2018 Banner/sayonara.jpg" alt="Image 2" width="100%">
+                    <p class="scroll_right">永別輓歌（日語：さよならエレジー），是菅田將暉與好友山崎賢人共同主演《致命之吻》的主題曲。延續日劇的內容與人物性格，菅田無造作的凌亂髮型搭配節奏輕快的吉他聲，腦中日劇的畫面又再被重新播放。這首歌的歌詞整體而言是正、負面情緒交錯，比起敘述風景，更想表達出複雜心情。
+                    </p>
+                </a>
+            </div>
+            <div class="item5">
+                <a href="https://youtu.be/SX_ViT4Ra7k" target="_blank">
+                    <img src="./img/2018 Banner/lemon.jpg" alt="Image 5" width="100%">
+                    <p class="scroll_left">在接到電視劇《法醫女王》邀請寫歌時，適逢德島爺爺離世，一個檸檬的隱喻，那酸澀的滋味就像人生，被切開的果實也無法回到過去，撫慰亡者也勉勵生者要繼續向前，就算你在世界的某個角落哭著寂寞著，也別忘記在世界的某一端也有人和你一樣，絕對不是孤單一人。
+                    </p>
+                </a>
+            </div>
+            <div class="item7">
+                <a href="https://youtu.be/-VKIqrvVOpo" target="_blank">
+                    <img src="./img/2018 Banner/yorushika.jpg" alt="Image 7" width="100%">
+                    <p class="scroll_right">ただ君に晴れ是一首能讓我們不由自主地與其產生情感聯繫的夏日之歌，MV配上輕快爽朗的旋律，正如在夏天給人清涼暢快的感覺。雖然吉他旋律走正統路線，卻不會讓人覺得老舊過時，獨特的旋律令人印象深刻，歌詞背後也隱藏了許多深厚的涵義。
+
+
+                        </p>
+                </a>
+            </div>
+    </div>
+        
+    <footer>
+            
+        <svg viewBox="0 0 120 28">
+         <defs> 
+           <mask id="xxx">
+             <circle cx="7" cy="12" r="40" fill="#fff" />
+           </mask>
+           
+           <filter id="goo">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+              <feColorMatrix in="blur" mode="matrix" values="
+                   1 0 0 0 0  
+                   0 1 0 0 0  
+                   0 0 1 0 0  
+                   0 0 0 13 -9" result="goo" />
+              <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+             <path id="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
+          </defs> 
+        
+           <use id="wave3" class="wave" xlink:href="#wave" x="0" y="-2" ></use> 
+           <use id="wave2" class="wave" xlink:href="#wave" x="0" y="0" ></use>
+         
+          
+        
+            <g class="arrow">
+            <polyline class="" points="108,8 110,6 112,8" fill="none"  />
+            <polyline class="" points="110,6 110,10.5" fill="none"  />
+            </g>
+            
+          
+          <g class="gooeff">
+          <circle class="drop drop1" cx="20" cy="2" r="1.8"  />
+          <circle class="drop drop2" cx="25" cy="2.5" r="1.5"  />
+          <circle class="drop drop3" cx="16" cy="2.8" r="1.2"  />
+            <use id="wave1" class="wave" xlink:href="#wave" x="0" y="1" />
+
+            <!-- g mask="url(#xxx)">
+            <path   id="wave1"  class="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
+            </g>
+          </g -->
+        </svg>
+        <div class="bgcontainer">
+        <div class="bg"></div>
+        </div>
+    </footer>
+<div class="bg"></div>
+        <div id="page_top"><a href="#"></a></div>
+    </div>
+    
+</div>
+</body>
+<script src="./scrollup.js"></script>
+<script src="./scrollbanner.js"></script>
+
+</html>
